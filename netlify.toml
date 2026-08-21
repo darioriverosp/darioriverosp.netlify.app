@@ -1,0 +1,35 @@
+[build]
+  publish = "."
+
+# --- Cabeceras de seguridad (Netlify no las añade por defecto) ---
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+
+# --- Caché largo para imágenes (no cambian de nombre a menudo) ---
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# --- Caché medio para la hoja de estilos ---
+[[headers]]
+  for = "/styles.css"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+
+# --- El HTML siempre revalidado, para que los cambios se vean al instante ---
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/cv_ats_gonzalo_riveros.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+    X-Robots-Tag = "index, follow"

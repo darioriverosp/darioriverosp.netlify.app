@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página no encontrada | Gonzalo Dario Riveros Plaza</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0b63ce">
+  <meta name="theme-color" content="#0b1a2f" media="(prefers-color-scheme: dark)">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='80'%3E%F0%9F%91%A8%E2%80%8D%F0%9F%92%BC%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .notfound {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .notfound-inner {
+      display: grid;
+      gap: 1.1rem;
+      justify-items: center;
+      max-width: 34rem;
+    }
+
+    .notfound-code {
+      font-size: clamp(4rem, 18vw, 8rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, var(--blue-900), var(--blue-500));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .notfound h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 5vw, 2.1rem);
+      line-height: 1.15;
+    }
+
+    .notfound p {
+      margin: 0;
+      color: var(--text-2);
+      font-size: 1.03rem;
+      text-wrap: pretty;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="notfound container">
+    <div class="notfound-inner">
+      <span class="notfound-code">404</span>
+      <h1>Esta página no existe</h1>
+      <p>
+        El enlace que seguiste no lleva a ninguna parte. Puede que la dirección esté mal escrita
+        o que el contenido ya no esté aquí.
+      </p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="/">Volver al inicio</a>
+        <a class="button button-ghost" href="/#portfolio">Ver proyectos</a>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>
