@@ -636,7 +636,7 @@
       place-items: center;
       border-radius: var(--radius);
       color: var(--accent, var(--blue-700));
-      background: color-mix(in srgb, var(--accent, var(--blue-700)) 12%, white);
+      background: color-mix(in srgb, var(--accent, var(--blue-700)) 12%, var(--mix-base));
       font-size: 1.18rem;
     }
 
@@ -774,7 +774,7 @@
       margin-bottom: 0.65rem;
       border-radius: var(--radius);
       color: var(--accent, var(--blue-500));
-      background: color-mix(in srgb, var(--accent, var(--blue-500)) 11%, white);
+      background: color-mix(in srgb, var(--accent, var(--blue-500)) 11%, var(--mix-base));
       font-family: "Font Awesome 6 Free";
       font-size: 0.95rem;
       font-weight: 900;
@@ -1648,6 +1648,19 @@
       .badge[style*="--badge-bg"] {
         --badge-bg: #1d2c46 !important;
         --badge-ink: #c9d8ee !important;
+      }
+
+      .eyebrow {
+        border-color: rgba(143, 199, 255, 0.22);
+        background: rgba(143, 199, 255, 0.1);
+      }
+
+      .eyebrow::before {
+        box-shadow: 0 0 0 5px rgba(34, 160, 107, 0.22);
+      }
+
+      .tags span {
+        background: rgba(143, 199, 255, 0.07);
       }
 
       .project-media {
