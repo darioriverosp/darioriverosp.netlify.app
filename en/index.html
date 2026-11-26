@@ -46,7 +46,7 @@
   <link rel="preload" as="image" href="../images/profile.webp" type="image/webp">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="../styles.css?v=20261126e">
+  <link rel="stylesheet" href="../styles.css?v=20261126f">
 
   <script type="application/ld+json">
   {
@@ -789,13 +789,13 @@
                   aria-hidden="true"></i>Send email</a>
               <a class="button button-ghost"
                 style="border-color: rgba(255,255,255,.38); background: rgba(255,255,255,.1); color: white"
-                href="https://wa.me/584123115063?text=Hi%20Gonzalo,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch."
+                href="https://wa.me/584123115063?text=Hi%20Gonzalo%20%F0%9F%91%8B%20I%20found%20you%20through%20your%20website%20%28darioriverosp.netlify.app%29%20and%20would%20like%20to%20talk."
                 target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp icon" aria-hidden="true"></i>WhatsApp</a>
             </div>
             <div class="contact-list" aria-label="Contact details">
               <a href="mailto:darioriveros19@gmail.com"><span><i class="fa-solid fa-envelope icon"
                     aria-hidden="true"></i>Email</span><strong>darioriveros19@gmail.com</strong></a>
-              <a href="https://wa.me/584123115063?text=Hi%20Gonzalo,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20get%20in%20touch."
+              <a href="https://wa.me/584123115063?text=Hi%20Gonzalo%20%F0%9F%91%8B%20I%20found%20you%20through%20your%20website%20%28darioriverosp.netlify.app%29%20and%20would%20like%20to%20talk."
                 target="_blank" rel="noopener"><span><i class="fa-solid fa-phone icon"
                     aria-hidden="true"></i>Phone</span><strong>+58 412 311 5063</strong></a>
               <a href="https://www.linkedin.com/in/darioriverosp/" target="_blank" rel="noopener"><span><i
@@ -830,6 +830,10 @@
       </div>
     </section>
   </main>
+
+  <a class="wa-float" href="https://wa.me/584123115063?text=Hi%20Gonzalo%20%F0%9F%91%8B%20I%20found%20you%20through%20your%20website%20%28darioriverosp.netlify.app%29%20and%20would%20like%20to%20talk." target="_blank" rel="noopener" aria-label="Message me on WhatsApp">
+    <i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span class="wa-float-tip">Let's talk?</span>
+  </a>
 
   <footer class="footer">
     <div class="container">
@@ -1011,6 +1015,25 @@
           submit.innerHTML = label;
         }
       });
+    }
+
+    // Botón flotante de WhatsApp: aparece al bajar y se oculta en la sección de contacto
+    const waFloat = document.querySelector('.wa-float');
+    const contactSection = document.getElementById('contact');
+    if (waFloat && contactSection) {
+      let pastHero = false;
+      let inContact = false;
+      const paintWa = () => waFloat.classList.toggle('is-visible', pastHero && !inContact);
+      window.addEventListener('scroll', () => {
+        pastHero = window.scrollY > window.innerHeight * 0.6;
+        paintWa();
+      }, { passive: true });
+      new IntersectionObserver((entries) => {
+        inContact = entries[0].isIntersecting;
+        paintWa();
+      }, { threshold: 0.15 }).observe(contactSection);
+      pastHero = window.scrollY > window.innerHeight * 0.6;
+      paintWa();
     }
   </script>
 </body>
