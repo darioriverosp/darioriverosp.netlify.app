@@ -48,7 +48,7 @@
   <link rel="preload" as="image" href="images/profile.webp" type="image/webp">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="styles.css?v=20261126d">
+  <link rel="stylesheet" href="styles.css?v=20261126e">
 
   <script type="application/ld+json">
   {
@@ -173,6 +173,7 @@
   }
   </script>
 
+  <script>try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 </head>
 
 <body>
@@ -201,6 +202,7 @@
         <a href="#certifications">Certificaciones</a>
         <a href="#reviews">Opiniones</a>
         <a href="#contact" class="nav-cta">Contacto</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false" data-to-dark="Cambiar a modo oscuro" data-to-light="Cambiar a modo claro" aria-label="Cambiar a modo oscuro"><i class="fa-solid fa-moon" aria-hidden="true"></i></button>
         <a class="lang-switch" href="en/" hreflang="en" lang="en" aria-label="Switch to English"><span class="lang-now" aria-hidden="true">ES</span><span class="lang-to">EN</span></a>
       </div>
     </nav>
@@ -807,18 +809,37 @@
                 href="https://wa.me/584123115063?text=Hola%20Gonzalo,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte."
                 target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp icon" aria-hidden="true"></i>WhatsApp</a>
             </div>
+            <div class="contact-list" aria-label="Datos de contacto">
+              <a href="mailto:darioriveros19@gmail.com"><span><i class="fa-solid fa-envelope icon"
+                    aria-hidden="true"></i>Email</span><strong>darioriveros19@gmail.com</strong></a>
+              <a href="https://wa.me/584123115063?text=Hola%20Gonzalo,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte."
+                target="_blank" rel="noopener"><span><i class="fa-solid fa-phone icon"
+                    aria-hidden="true"></i>Teléfono</span><strong>+58 412 311 5063</strong></a>
+              <a href="https://www.linkedin.com/in/darioriverosp/" target="_blank" rel="noopener"><span><i
+                    class="fa-brands fa-linkedin icon"
+                    aria-hidden="true"></i>LinkedIn</span><strong>/in/darioriverosp</strong></a>
+            </div>
           </div>
 
-          <div class="contact-list" aria-label="Datos de contacto">
-            <a href="mailto:darioriveros19@gmail.com"><span><i class="fa-solid fa-envelope icon"
-                  aria-hidden="true"></i>Email</span><strong>darioriveros19@gmail.com</strong></a>
-            <a href="https://wa.me/584123115063?text=Hola%20Gonzalo,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20contactarte."
-              target="_blank" rel="noopener"><span><i class="fa-solid fa-phone icon"
-                  aria-hidden="true"></i>Teléfono</span><strong>+58 412 311 5063</strong></a>
-            <a href="https://www.linkedin.com/in/darioriverosp/" target="_blank" rel="noopener"><span><i
-                  class="fa-brands fa-linkedin icon"
-                  aria-hidden="true"></i>LinkedIn</span><strong>/in/darioriverosp</strong></a>
-          </div>
+          <form class="contact-form" name="contacto" method="POST" action="/gracias.html" data-netlify="true"
+            netlify-honeypot="bot-field" data-ok="¡Gracias! Recibí tu mensaje y te responderé pronto." data-err="No se pudo enviar. Escríbeme por email o WhatsApp, por favor." data-sending="Enviando…">
+            <input type="hidden" name="form-name" value="contacto">
+            <input type="hidden" name="idioma" value="es">
+            <p class="form-hidden"><label>No llenar <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+            <div class="form-head">
+              <strong>Escríbeme</strong>
+              <span>Te respondo lo antes posible.</span>
+            </div>
+            <div class="form-row">
+              <label>Nombre<input type="text" name="nombre" autocomplete="name" required maxlength="80"></label>
+              <label>Email<input type="email" name="email" autocomplete="email" required maxlength="120"></label>
+            </div>
+            <label>Motivo<select name="motivo"><option value="Oferta de empleo">Oferta de empleo</option><option value="Proyecto freelance">Proyecto freelance</option><option value="Consulta">Consulta</option><option value="Otro">Otro</option></select></label>
+            <label>Mensaje<textarea name="mensaje" rows="4" required maxlength="2000" placeholder="Cuéntame en qué te puedo ayudar"></textarea></label>
+            <button class="button button-primary form-submit" type="submit"><i class="fa-solid fa-paper-plane icon"
+                aria-hidden="true"></i>Enviar mensaje</button>
+            <p class="form-status" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
     </section>
@@ -948,6 +969,63 @@
         });
       });
     });
+
+    // Tema claro / oscuro elegido a mano (se recuerda en este navegador)
+    const themeToggle = document.getElementById('themeToggle');
+    if (themeToggle) {
+      const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      const isDark = () => {
+        const forced = document.documentElement.getAttribute('data-theme');
+        return forced ? forced === 'dark' : darkQuery.matches;
+      };
+      const paintToggle = () => {
+        const dark = isDark();
+        themeToggle.setAttribute('aria-pressed', String(dark));
+        themeToggle.setAttribute('aria-label', dark ? themeToggle.dataset.toLight : themeToggle.dataset.toDark);
+        themeToggle.title = themeToggle.getAttribute('aria-label');
+        themeToggle.querySelector('i').className = 'fa-solid ' + (dark ? 'fa-sun' : 'fa-moon');
+      };
+      themeToggle.addEventListener('click', () => {
+        const next = isDark() ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        paintToggle();
+      });
+      darkQuery.addEventListener('change', paintToggle);
+      paintToggle();
+    }
+
+    // Formulario de contacto (Netlify Forms) enviado sin recargar la página
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      const status = contactForm.querySelector('.form-status');
+      const submit = contactForm.querySelector('.form-submit');
+      contactForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const label = submit.innerHTML;
+        submit.disabled = true;
+        submit.textContent = contactForm.dataset.sending;
+        status.className = 'form-status';
+        try {
+          const body = new URLSearchParams(new FormData(contactForm)).toString();
+          const res = await fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body
+          });
+          if (!res.ok) throw new Error(res.status);
+          contactForm.reset();
+          status.textContent = contactForm.dataset.ok;
+          status.classList.add('is-ok');
+        } catch (error) {
+          status.textContent = contactForm.dataset.err;
+          status.classList.add('is-error');
+        } finally {
+          submit.disabled = false;
+          submit.innerHTML = label;
+        }
+      });
+    }
   </script>
 </body>
 

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mensaje enviado | Gonzalo Dario Riveros Plaza</title>
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0b63ce">
+  <meta name="theme-color" content="#0b1a2f" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/styles.css?v=20261126e">
+  <script>try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+  <style>
+    .notfound {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .notfound-inner {
+      display: grid;
+      gap: 1.1rem;
+      justify-items: center;
+      max-width: 34rem;
+    }
+
+    .notfound-icon {
+      font-size: 4rem;
+      line-height: 1;
+    }
+
+    .notfound h1 {
+      margin: 0;
+      font-size: clamp(1.5rem, 5vw, 2.1rem);
+      line-height: 1.15;
+    }
+
+    .notfound p {
+      margin: 0;
+      color: var(--text-2);
+      font-size: 1.03rem;
+      text-wrap: pretty;
+    }
+
+    [data-lang="en"] {
+      display: none;
+    }
+
+    .is-en [data-lang="es"] {
+      display: none;
+    }
+
+    .is-en [data-lang="en"] {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="notfound container">
+    <div class="notfound-inner" data-lang="es">
+      <span class="notfound-icon" aria-hidden="true">✉️</span>
+      <h1>¡Mensaje enviado!</h1>
+      <p>Gracias por escribirme. Leeré tu mensaje y te responderé lo antes posible.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="/">Volver al inicio</a>
+        <a class="button button-ghost" href="/#portfolio">Ver proyectos</a>
+      </div>
+    </div>
+    <div class="notfound-inner" data-lang="en" lang="en">
+      <span class="notfound-icon" aria-hidden="true">✉️</span>
+      <h1>Message sent!</h1>
+      <p>Thanks for reaching out. I will read your message and get back to you as soon as I can.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="/en/">Back to home</a>
+        <a class="button button-ghost" href="/en/#portfolio">See projects</a>
+      </div>
+    </div>
+  </main>
+  <script>
+    if (new URLSearchParams(location.search).get('lang') === 'en') {
+      document.documentElement.lang = 'en';
+      document.documentElement.classList.add('is-en');
+      document.title = 'Message sent | Gonzalo Dario Riveros Plaza';
+    }
+  </script>
+</body>
+
+</html>

@@ -1519,13 +1519,189 @@
     }
 
     @media (min-width: 761px) and (max-width: 1120px) {
+      .nav-links {
+        gap: 0.15rem;
+      }
+
       .nav-links a {
-        padding-inline: 0.55rem;
-        font-size: 0.86rem;
+        padding-inline: 0.48rem;
+        font-size: 0.84rem;
+      }
+
+      .nav-links .lang-switch,
+      .theme-toggle {
+        margin-left: 0.2rem;
       }
 
       .brand-name small {
         display: none;
+      }
+    }
+
+    /* ---- Modo claro elegido a mano: controles de formulario en claro ---- */
+    :root[data-theme="light"] {
+      color-scheme: light;
+    }
+
+    /* ---- Botón de tema claro/oscuro ---- */
+    .theme-toggle {
+      display: inline-grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      margin-left: 0.4rem;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink-blue-2);
+      background: var(--surface-2);
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
+    }
+
+    .theme-toggle:hover,
+    .theme-toggle:focus-visible {
+      border-color: rgba(21, 147, 230, 0.55);
+      background: var(--blue-100);
+      color: var(--ink-blue);
+    }
+
+    @media (max-width: 760px) {
+      .theme-toggle {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        width: 100%;
+        height: 44px;
+        margin: 0.35rem 0 0;
+        border-radius: 11px;
+        font-weight: 800;
+      }
+
+      .theme-toggle::after {
+        content: attr(aria-label);
+        font-size: 0.88rem;
+      }
+    }
+
+    /* ---- Formulario de contacto (Netlify Forms) ---- */
+    .contact-panel .contact-list {
+      margin-top: 1.2rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.8rem;
+      padding: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .form-head {
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .form-head strong {
+      font-size: 1.15rem;
+    }
+
+    .form-head span {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.9rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.8rem;
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: 0.35rem;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.85rem;
+      font-weight: 760;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.65rem 0.75rem;
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: calc(var(--radius) - 2px);
+      color: #10213f;
+      background: #fff;
+      font: inherit;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color-scheme: light;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .contact-form input:focus-visible,
+    .contact-form select:focus-visible,
+    .contact-form textarea:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 1px;
+    }
+
+    .form-submit {
+      justify-self: start;
+      border: 0;
+      color: var(--blue-900);
+      background: #fff;
+      box-shadow: none;
+      cursor: pointer;
+    }
+
+    .form-submit:disabled {
+      opacity: 0.7;
+      cursor: progress;
+    }
+
+    .form-hidden {
+      position: absolute;
+      left: -10000px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
+
+    .form-status {
+      margin: 0;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .form-status:empty {
+      display: none;
+    }
+
+    .form-status.is-ok {
+      color: #9ff0c9;
+    }
+
+    .form-status.is-error {
+      color: #ffd0c9;
+    }
+
+    @media (max-width: 760px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .form-submit {
+        justify-self: stretch;
       }
     }
 
@@ -1910,9 +2086,9 @@
       display: none;
     }
 
-    /* ---- Modo oscuro ---- */
+        /* ---- Modo oscuro: automático (salvo que el usuario elija claro) ---- */
     @media (prefers-color-scheme: dark) {
-      :root {
+      :root:not([data-theme="light"]) {
         color-scheme: dark;
         --ink: #e8f0fa;
         --muted: #9aabc2;
@@ -1936,16 +2112,16 @@
         --shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
       }
 
-      body::before {
+      :root:not([data-theme="light"]) body::before {
         background: linear-gradient(125deg, rgba(13, 27, 48, 0.92), rgba(9, 19, 36, 0.6));
       }
 
-      .site-header {
+      :root:not([data-theme="light"]) .site-header {
         border-bottom-color: rgba(60, 88, 122, 0.5);
         background: rgba(10, 21, 38, 0.86);
       }
 
-      .section-band {
+      :root:not([data-theme="light"]) .section-band {
         border-block-color: rgba(60, 88, 122, 0.42);
         background:
           linear-gradient(135deg, rgba(18, 35, 60, 0.92), rgba(10, 21, 38, 0.82)),
@@ -1953,63 +2129,165 @@
         background-size: auto, 36px 36px;
       }
 
-      .info-panel,
-      .skill-card,
-      .role-card,
-      .cert-card,
-      .project-card {
+      :root:not([data-theme="light"]) .info-panel,
+      :root:not([data-theme="light"]) .skill-card,
+      :root:not([data-theme="light"]) .role-card,
+      :root:not([data-theme="light"]) .cert-card,
+      :root:not([data-theme="light"]) .project-card {
         background: var(--surface-1);
         box-shadow: 0 14px 38px rgba(0, 0, 0, 0.38);
       }
 
-      .menu-button,
-      .nav-links {
+      :root:not([data-theme="light"]) .menu-button,
+      :root:not([data-theme="light"]) .nav-links {
         background: var(--surface-3);
       }
 
-      .button-ghost,
-      .quick-stack span,
-      .signal,
-      .filter-bar {
+      :root:not([data-theme="light"]) .button-ghost,
+      :root:not([data-theme="light"]) .quick-stack span,
+      :root:not([data-theme="light"]) .signal,
+      :root:not([data-theme="light"]) .filter-bar {
         background: var(--surface-2);
       }
 
-      .portrait-panel {
+      :root:not([data-theme="light"]) .portrait-panel {
         background: linear-gradient(180deg, #14263f, #0c1a2e);
       }
 
-      .info-row {
+      :root:not([data-theme="light"]) .info-row {
         border-bottom-color: rgba(60, 88, 122, 0.42);
       }
 
-      .badge {
+      :root:not([data-theme="light"]) .badge {
         background: var(--blue-100);
         color: var(--ink-blue);
       }
 
-      /* Los badges de color van con fondo pastel claro en modo claro: se oscurecen aquí */
+      :root:not([data-theme="light"]) /* Los badges de color van con fondo pastel claro en modo claro: se oscurecen aquí */
       .badge[style*="--badge-bg"] {
         --badge-bg: #1d2c46 !important;
         --badge-ink: #c9d8ee !important;
       }
 
-      .eyebrow {
+      :root:not([data-theme="light"]) .eyebrow {
         border-color: rgba(143, 199, 255, 0.22);
         background: rgba(143, 199, 255, 0.1);
       }
 
-      .eyebrow::before {
+      :root:not([data-theme="light"]) .eyebrow::before {
         box-shadow: 0 0 0 5px rgba(34, 160, 107, 0.22);
       }
 
-      .tags span {
+      :root:not([data-theme="light"]) .tags span {
         background: rgba(143, 199, 255, 0.07);
       }
 
-      .project-media {
+      :root:not([data-theme="light"]) .project-media {
         filter: brightness(0.88) contrast(1.02);
       }
     }
+
+    /* ---- Modo oscuro elegido a mano con el botón ---- */
+    @media all {
+      :root[data-theme="dark"] {
+        color-scheme: dark;
+        --ink: #e8f0fa;
+        --muted: #9aabc2;
+        --soft: #13243d;
+        --paper: #101f36;
+        --line: #263a54;
+        --blue-100: #16304f;
+        --ink-blue: #8fc7ff;
+        --ink-blue-2: #5fb0f5;
+        --text-2: #bccbdf;
+        --text-3: #9dafc6;
+        --text-4: #8b9db4;
+        --bg-a: #0a1526;
+        --bg-b: #0d1b30;
+        --bg-c: #091324;
+        --grid-line: rgba(143, 199, 255, 0.045);
+        --surface-1: rgba(20, 36, 60, 0.88);
+        --surface-2: rgba(20, 36, 60, 0.7);
+        --surface-3: #12233c;
+        --mix-base: #12233c;
+        --shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+      }
+
+      :root[data-theme="dark"] body::before {
+        background: linear-gradient(125deg, rgba(13, 27, 48, 0.92), rgba(9, 19, 36, 0.6));
+      }
+
+      :root[data-theme="dark"] .site-header {
+        border-bottom-color: rgba(60, 88, 122, 0.5);
+        background: rgba(10, 21, 38, 0.86);
+      }
+
+      :root[data-theme="dark"] .section-band {
+        border-block-color: rgba(60, 88, 122, 0.42);
+        background:
+          linear-gradient(135deg, rgba(18, 35, 60, 0.92), rgba(10, 21, 38, 0.82)),
+          linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+        background-size: auto, 36px 36px;
+      }
+
+      :root[data-theme="dark"] .info-panel,
+      :root[data-theme="dark"] .skill-card,
+      :root[data-theme="dark"] .role-card,
+      :root[data-theme="dark"] .cert-card,
+      :root[data-theme="dark"] .project-card {
+        background: var(--surface-1);
+        box-shadow: 0 14px 38px rgba(0, 0, 0, 0.38);
+      }
+
+      :root[data-theme="dark"] .menu-button,
+      :root[data-theme="dark"] .nav-links {
+        background: var(--surface-3);
+      }
+
+      :root[data-theme="dark"] .button-ghost,
+      :root[data-theme="dark"] .quick-stack span,
+      :root[data-theme="dark"] .signal,
+      :root[data-theme="dark"] .filter-bar {
+        background: var(--surface-2);
+      }
+
+      :root[data-theme="dark"] .portrait-panel {
+        background: linear-gradient(180deg, #14263f, #0c1a2e);
+      }
+
+      :root[data-theme="dark"] .info-row {
+        border-bottom-color: rgba(60, 88, 122, 0.42);
+      }
+
+      :root[data-theme="dark"] .badge {
+        background: var(--blue-100);
+        color: var(--ink-blue);
+      }
+
+      :root[data-theme="dark"] /* Los badges de color van con fondo pastel claro en modo claro: se oscurecen aquí */
+      .badge[style*="--badge-bg"] {
+        --badge-bg: #1d2c46 !important;
+        --badge-ink: #c9d8ee !important;
+      }
+
+      :root[data-theme="dark"] .eyebrow {
+        border-color: rgba(143, 199, 255, 0.22);
+        background: rgba(143, 199, 255, 0.1);
+      }
+
+      :root[data-theme="dark"] .eyebrow::before {
+        box-shadow: 0 0 0 5px rgba(34, 160, 107, 0.22);
+      }
+
+      :root[data-theme="dark"] .tags span {
+        background: rgba(143, 199, 255, 0.07);
+      }
+
+      :root[data-theme="dark"] .project-media {
+        filter: brightness(0.88) contrast(1.02);
+      }
+    }
+
 
     @media (prefers-reduced-motion: reduce) {
       .nav-links {
