@@ -31,6 +31,7 @@ Soporte técnico L2, Zendesk, gestión de tickets, SLA y KPI, automatización de
 - [Blue Mérida](https://bluemerida.com/) (destacado): guía inteligente de Mérida en formato app, con directorio por categorías, mapa, eventos y promociones; PWA publicada en Play Store
 - [SLG · Dota 2](https://slgteam.netlify.app/): panel de rendimiento de un clan de Dota 2 con datos de STRATZ (Astro)
 - [Luza Canta](https://luza-canta.netlify.app/): app de karaoke instalable que quita la voz de las canciones (Astro, PWA)
+- [CanastaMan](https://darioriverosp.itch.io/canastaman): juego de baloncesto incremental para navegador, publicado en itch.io
 - [EG Solutions](https://egsolutions.net/): sitio corporativo de una empresa venezolana de ingeniería y mantenimiento
 - [PayJoy Support DB](https://payjoydbdario.netlify.app/): base de conocimiento para soporte L2
 - [Chat Line Guide](https://www.chatlineguide.com/): directorio de reseñas con blog (WordPress)

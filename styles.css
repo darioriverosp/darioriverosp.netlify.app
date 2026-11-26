@@ -967,7 +967,8 @@
       transform: translateX(2px);
     }
 
-    .is-hidden {
+    .is-hidden,
+    .project-card.is-hidden {
       display: none;
     }
 
@@ -1525,6 +1526,35 @@
 
       .brand-name small {
         display: none;
+      }
+    }
+
+    /* ---- Contacto como botón al final del menú ---- */
+    .nav-links a.nav-cta {
+      margin-left: 0.3rem;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue-700), var(--blue-500));
+      box-shadow: 0 8px 20px rgba(11, 99, 206, 0.25);
+    }
+
+    .nav-links a.nav-cta:hover,
+    .nav-links a.nav-cta:focus-visible,
+    .nav-links a.nav-cta.is-current {
+      color: #fff;
+      background: linear-gradient(135deg, var(--blue-900), var(--blue-700));
+    }
+
+    .nav-links a.nav-cta::before,
+    .nav-links a.nav-cta::after {
+      display: none;
+    }
+
+    @media (max-width: 760px) {
+      .nav-links a.nav-cta {
+        justify-content: center;
+        margin: 0.35rem 0 0;
+        border-radius: 11px;
       }
     }
 
