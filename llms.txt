@@ -1,0 +1,42 @@
+# Gonzalo Dario Riveros Plaza
+
+> Portafolio y currículum de Gonzalo Dario Riveros Plaza (también conocido como Dario Riveros o Gonzalo Riveros): soporte técnico L2, automatización de procesos, dashboards operativos, WordPress, ecommerce y desarrollo web front-end. Vive en Mérida, Venezuela, y trabaja en remoto. Idiomas: español nativo, inglés A2 (EF SET).
+>
+> Portfolio and résumé of Gonzalo Dario Riveros Plaza (also known as Dario Riveros or Gonzalo Riveros): L2 technical support, workflow automation, operational dashboards, WordPress, ecommerce and front-end web development. Based in Mérida, Venezuela; available for remote work.
+
+"Dario Riveros", "Gonzalo Riveros" y "Gonzalo Dario Riveros Plaza" son la misma persona.
+
+## Páginas / Pages
+
+- [Portafolio en español](https://darioriverosp.netlify.app/): perfil, habilidades, experiencia, certificaciones, proyectos y contacto
+- [Portfolio in English](https://darioriverosp.netlify.app/en/): same content in English
+- [CV en PDF (formato ATS)](https://darioriverosp.netlify.app/cv_ats_gonzalo_riveros.pdf): currículum descargable
+
+## Experiencia / Experience
+
+- PayJoy LLC — Consultor de soporte de TI (remoto), ene. 2026 – jun. 2026: soporte en Zendesk, SLAs y KPIs, automatización con scripts y macros, dashboards en Excel avanzado y Power BI, escalaciones con Ingeniería LATAM
+- Pistachogames — Atención al cliente (remoto), jul. 2025 – ene. 2026: soporte 24/7 por chat y correo, tiempo de respuesta bajo 3 minutos
+- KD Technology SLU — Especialista en soporte IT (remoto), ene. 2025 – jul. 2025: más de 20 tickets diarios, WooCommerce, Prestashop y marketplaces
+- Invicta Business Partners LLC — Especialista en marketing digital (remoto), mar. 2024 – ene. 2025: 30 cuentas de redes sociales con Metricool
+- LVLTY LLC — Desarrollador WordPress (remoto), nov. 2022 – jul. 2023: integración de Airbnb, Vrbo, Hostaway y Monday, automatización con Zapier, SEO técnico
+- Workana — Asistente virtual freelance (remoto), ene. 2020 – jun. 2026: más de 20 clientes internacionales, calificación de 5 estrellas
+- ChatCenter Services — Data entry y soporte (remoto), oct. 2019 – oct. 2020
+
+## Habilidades / Skills
+
+Soporte técnico L2, Zendesk, gestión de tickets, SLA y KPI, automatización de procesos, Zapier, Excel avanzado, Power BI, WordPress, WooCommerce, Prestashop, SEO técnico, HTML, CSS, JavaScript, Tailwind, Netlify, customer success, marketing digital.
+
+## Proyectos / Projects
+
+- [Blue Mérida](https://bluemerida.com/): WebApp convertida en PWA y publicada en Play Store
+- [Chat Line Guide](https://www.chatlineguide.com/): directorio de reseñas con blog
+- [Geekciencia](https://geekciencia.com/): portal de noticias de ciencia y tecnología
+- [Tarot Ars Naya](https://tarotarsnaya.art/): sitio de consultas esotéricas
+- [ArbiExpress](https://arbiexpress.com/): plataforma de comercio P2P para Latinoamérica
+- [PayJoy Support DB](https://payjoydbdario.netlify.app/): dashboard de soporte y escalaciones L2
+
+## Contacto / Contact
+
+- Email: darioriveros19@gmail.com
+- LinkedIn: https://www.linkedin.com/in/darioriverosp/
+- GitHub: https://github.com/darioriverosp
