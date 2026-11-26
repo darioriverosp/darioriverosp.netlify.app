@@ -28,15 +28,18 @@ Soporte técnico L2, Zendesk, gestión de tickets, SLA y KPI, automatización de
 
 ## Proyectos / Projects
 
+- [Blue Mérida](https://bluemerida.com/) (destacado): guía inteligente de Mérida en formato app, con directorio por categorías, mapa, eventos y promociones; PWA publicada en Play Store
 - [SLG · Dota 2](https://slgteam.netlify.app/): panel de rendimiento de un clan de Dota 2 con datos de STRATZ (Astro)
 - [Luza Canta](https://luza-canta.netlify.app/): app de karaoke instalable que quita la voz de las canciones (Astro, PWA)
 - [EG Solutions](https://egsolutions.net/): sitio corporativo de una empresa venezolana de ingeniería y mantenimiento
-- [Blue Mérida](https://bluemerida.com/): WebApp convertida en PWA y publicada en Play Store
-- [Chat Line Guide](https://www.chatlineguide.com/): directorio de reseñas con blog
-- [Geekciencia](https://geekciencia.com/): portal de noticias de ciencia y tecnología
-- [Tarot Ars Naya](https://tarotarsnaya.art/): sitio de consultas esotéricas
-- [ArbiExpress](https://arbiexpress.com/): plataforma de comercio P2P para Latinoamérica
-- [PayJoy Support DB](https://payjoydbdario.netlify.app/): dashboard de soporte y escalaciones L2
+- [PayJoy Support DB](https://payjoydbdario.netlify.app/): base de conocimiento para soporte L2
+- [Chat Line Guide](https://www.chatlineguide.com/): directorio de reseñas con blog (WordPress)
+- [Insecta & Reptilia](https://insectareptilia.netlify.app/): catálogo de un criadero de reptiles
+- [Elite Villagers](https://elitevillagers.netlify.app/): landing de reclutamiento para una agencia
+
+## Opiniones de clientes / Client reviews
+
+4.97 de 5 estrellas en Workana con 19 valoraciones, 17 proyectos completados y 3 clientes que lo contrataron más de una vez: https://www.workana.com/freelancer/c5d76cba7b6f064c210516cb374a468f
 
 ## Contacto / Contact
 
