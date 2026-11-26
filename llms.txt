@@ -24,10 +24,13 @@
 
 ## Habilidades / Skills
 
-Soporte técnico L2, Zendesk, gestión de tickets, SLA y KPI, automatización de procesos, Zapier, Excel avanzado, Power BI, WordPress, WooCommerce, Prestashop, SEO técnico, HTML, CSS, JavaScript, Tailwind, Netlify, customer success, marketing digital.
+Soporte técnico L2, Zendesk, gestión de tickets, SLA y KPI, automatización de procesos, Zapier, Excel avanzado, Power BI, WordPress, WooCommerce, Prestashop, SEO técnico, HTML, CSS, JavaScript, Astro, Tailwind, Netlify, customer success, marketing digital.
 
 ## Proyectos / Projects
 
+- [SLG · Dota 2](https://slgteam.netlify.app/): panel de rendimiento de un clan de Dota 2 con datos de STRATZ (Astro)
+- [Luza Canta](https://luza-canta.netlify.app/): app de karaoke instalable que quita la voz de las canciones (Astro, PWA)
+- [EG Solutions](https://egsolutions.net/): sitio corporativo de una empresa venezolana de ingeniería y mantenimiento
 - [Blue Mérida](https://bluemerida.com/): WebApp convertida en PWA y publicada en Play Store
 - [Chat Line Guide](https://www.chatlineguide.com/): directorio de reseñas con blog
 - [Geekciencia](https://geekciencia.com/): portal de noticias de ciencia y tecnología
