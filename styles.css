@@ -1528,15 +1528,23 @@
       transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
     }
 
-    .nav-links .lang-switch span {
-      color: var(--text-3);
-      opacity: 0.8;
+    /* Idioma en el que estás: resaltado */
+    .nav-links .lang-switch .lang-now {
+      color: var(--ink-blue);
     }
 
-    .nav-links .lang-switch span::after {
+    .nav-links .lang-switch .lang-now::after {
       content: "/";
       margin-left: 0.32rem;
+      color: var(--text-3);
       opacity: 0.55;
+    }
+
+    /* Idioma al que cambiarías: apagado hasta pasar el ratón */
+    .nav-links .lang-switch .lang-to {
+      color: var(--text-3);
+      opacity: 0.8;
+      transition: color 200ms ease, opacity 200ms ease;
     }
 
     .nav-links .lang-switch:hover,
@@ -1544,6 +1552,12 @@
       border-color: rgba(21, 147, 230, 0.55);
       background: var(--blue-100);
       color: var(--ink-blue);
+    }
+
+    .nav-links .lang-switch:hover .lang-to,
+    .nav-links .lang-switch:focus-visible .lang-to {
+      color: var(--ink-blue);
+      opacity: 1;
     }
 
     /* ---- Sección activa en el menú (escritorio) ---- */
